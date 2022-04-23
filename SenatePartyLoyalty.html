@@ -47,8 +47,8 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"
-            href="#"><b>Party Loyalty</b></a>
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" href="#"><b>Party
+              Loyalty</b></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="HousePartyLoyalty.html"><b>House</b></a></li>
             <li><a class="dropdown-item" href="SenatePartyLoyalty.html"><b>Senate</b></a></li>
@@ -64,13 +64,15 @@
     <div class="row">
       <article class="col">
         <h4>Party Loyalty</h4>
-        <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
+        <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively,
+          tend to be the most faithful in voting for their party's nominee for office and legislation that backs their
+          party's agenda. </p>
 
       </article>
 
 
       <article class="col">
-        <h4 class="text-right">  Senate at a galance  </h4>
+        <h4 class="text-right"> Senate at a galance </h4>
         <table class="table table-bordered text-center table-hover">
           <thead>
             <tr>
@@ -81,7 +83,15 @@
           </thead>
 
           <tbody id="galance">
+            <tr v-for="(cadaUno, key) in membe">
 
+
+              <td>{{cadaUno.Party}}</td>
+              <td>{{cadaUno.catidad}}</td>
+              <td>{{cadaUno.promedio}}</td>
+
+
+            </tr>
           </tbody>
         </table>
       </article>
@@ -90,7 +100,7 @@
     <div class="row">
 
       <article class="col">
-          <h4>  Least Engaged (Bottom 10% Attendance)  </h4>
+        <h4> Least Engaged (Bottom 10% Attendance) </h4>
         <table class="table table-bordered text-center table-hover">
           <thead>
             <tr>
@@ -101,7 +111,15 @@
           </thead>
 
           <tbody id="bottomLoyal">
+            <tr v-for="(cadaUno, key) in ordenadoB.reverse()" v-if="key < (ordenadoB.length*0.10)">
 
+
+              <td><a v-bind:href="cadaUno.url">{{cadaUno.last_name}} {{cadaUno.first_name}} {{cadaUno.middle_name}}</a></td>
+              <td>{{cadaUno.total_votes}}</td>
+              <td>{{cadaUno.votes_with_party_pct}}</td>
+
+
+            </tr>
           </tbody>
         </table>
       </article>
@@ -118,7 +136,15 @@
           </thead>
 
           <tbody id="topLoyal">
+            <tr v-for="(cadaUn, key) in ordenadoM" v-if="key < (ordenadoM.length*0.10)">
 
+
+              <td><a v-bind:href="cadaUno.url">{{cadaUno.last_name}} {{cadaUno.first_name}} {{cadaUno.middle_name}}</a></td>
+              <td>{{cadaUn.total_votes}}</td>
+              <td>{{cadaUn.votes_with_party_pct}}</td>
+
+
+            </tr>
           </tbody>
         </table>
       </article>
@@ -132,8 +158,8 @@
   </footer>
 
 
-  <script type="text/javascript" src="script/senate.js"></script>
-  <script type="text/javascript" src="script/PartyLoyalty.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="script/senateLoyal.js"></script>
 </body>
 
 </html>

@@ -49,8 +49,8 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"
-            href="#"><b>Party Loyalty</b></a>
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" href="#"><b>Party
+              Loyalty</b></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="HousePartyLoyalty.html"><b>House</b></a></li>
             <li><a class="dropdown-item" href="SenatePartyLoyalty.html"><b>Senate</b></a></li>
@@ -59,24 +59,46 @@
       </ul>
     </div>
   </nav>
+  <section>
+    <h2>Congressmen</h2>
+    <p>The major power of the House is to pass federal legislation that affects the entire country, although its
+      bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law
+      (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The
+      House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached
+      officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no
+      majority in the Electoral College.</p>
+    <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but
+      every state is entitled to at least one representative. </p>
+
+    <table class="table-borderless text-center">
+      <thead>
+        <tr>
+          <th>FULL NAME</th>
+          <th>PARTY</th>
+          <th>STATE</th>
+          <th>SENIORITY</th>
+          <th>PERCENTAGE OF VOTES</th>
+        </tr>
+      </thead>
+
+      <tbody id="data-data">
+
+
+        <tr v-for="cadaUno in member">
+
+          <td><a v-bind:href="cadaUno.url">{{cadaUno.last_name}} {{cadaUno.first_name}} {{cadaUno.middle_name}}</a></td>
+          <td>{{cadaUno.party}}</td>
+          <td>{{cadaUno.state}}</td>
+          <td>{{cadaUno.seniority}}</td>
+          <td>{{cadaUno.votes_with_party_pct}}</td>
+
+        </tr>
 
 
 
-  <table class="table-borderless text-center">
-    <thead>
-      <tr>
-        <th>FULL NAME</th>
-        <th>PARTY</th>
-        <th>STATE</th>
-        <th>SENIORITY</th>
-        <th>PERCENTAGE OF VOTES</th>
-      </tr>
-    </thead>
-
-    <tbody id="data-data">
-
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </section>
   <br><br><br>
 
 
@@ -85,8 +107,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script type="text/javascript" src="script/senate.js"></script>
-  <script type="text/javascript" src="script/script.js"></script>
+  <script type="text/javascript" src="script/scriptS.js"></script>
 </body>
 
 </html>
